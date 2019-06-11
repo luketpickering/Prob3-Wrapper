@@ -1,4 +1,4 @@
-#prob3++wrapper
+# prob3++wrapper
 
 A simple wrapper for prob3++ the neutrino oscillation
 probability calculator for use with ROOT.
@@ -21,7 +21,7 @@ the earth and thus the baseline. DUNE is 5.8 degrees.
 The 6 oscillation parameters are then given to OscillationHelper::Setup
 to instantiate the oscillation calculation. Angle are set as
 sin^2(mix_ang_rad), mass splittings are in eV, and dcp is cyclic from
--pi to pi (or 0 to 1pi).
+-pi to pi (or 0 to 2pi).
 
 An oscillation channel is then set with 
 OscillationHelper::SetOscillationChannel where the neutrinos have
