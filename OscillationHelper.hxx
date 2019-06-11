@@ -31,6 +31,7 @@ struct OscillationHelper {
 
   OscillationHelper() : IsSetUp(false), bp(NULL){};
   OscillationHelper(OscillationHelper const &other);
+  ~OscillationHelper();
 
   void SetOscillationChannel(int PDGFrom, int PDGTo);
   double GetWeight(double ENu_GeV);

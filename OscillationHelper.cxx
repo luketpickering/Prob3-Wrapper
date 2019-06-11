@@ -98,3 +98,4 @@ void OscillationHelper::OscillateHistogram(TH1 *h) {
     h->SetBinError(bi_it, weight * h->GetBinError(bi_it));
   }
 }
+OscillationHelper::~OscillationHelper() { delete bp; }
