@@ -1,6 +1,12 @@
 #include "OscillationHelper.hxx"
 R__LOAD_LIBRARY(WrappedProb3++.20121225.so)
 
+#include "TFile.h"
+#include "TGraph.h"
+#include "TSystem.h"
+
+#include <iostream>
+
 void example() {
 
   // DUNE beam dip
