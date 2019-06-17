@@ -41,4 +41,4 @@ main function.
 
 Compile like `compile_macro.sh example_R5.C`, which should produce `example_R5.exe`, that can then be run like `./example_R5.exe` to produce the
 same output as `example.C`. Note for any pure ROOT and Prob3++ macro, the above
-`compile_macro.sh`
+`compile_macro.sh` should produce a working binary.
