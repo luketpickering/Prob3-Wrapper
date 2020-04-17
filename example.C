@@ -1,5 +1,5 @@
 #include "OscillationHelper.hxx"
-R__LOAD_LIBRARY(WrappedProb3++.20121225.so)
+R__LOAD_LIBRARY(WrappedProb3++ .20121225.so)
 
 #include "TFile.h"
 #include "TGraph.h"
@@ -28,9 +28,9 @@ void example() {
 
   OscillationHelper oh_numu, oh_nue, oh_nutau;
 
-  oh_numu.Setup(osc_params, beam_dip_deg);
-  oh_nue.Setup(osc_params, beam_dip_deg);
-  oh_nutau.Setup(osc_params, beam_dip_deg);
+  oh_numu.Setup_dipangle(osc_params, beam_dip_deg);
+  oh_nue.Setup_dipangle(osc_params, beam_dip_deg);
+  oh_nutau.Setup_dipangle(osc_params, beam_dip_deg);
 
   int pdg_numu = 14;
   int pdg_nue = 12;

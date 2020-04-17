@@ -42,7 +42,8 @@ OscillationHelper::OscillationHelper(OscillationHelper const &other) {
   bp = new BargerPropagator();
 }
 
-void OscillationHelper::Setup(double OscParams[6], double DipAngle_degrees) {
+void OscillationHelper::Setup_dipangle(double OscParams[6],
+                                       double DipAngle_degrees) {
   std::copy_n(OscParams, 6, this->OscParams);
   this->DipAngle_degrees = DipAngle_degrees;
 
@@ -66,6 +67,14 @@ void OscillationHelper::Setup(double OscParams[6], double DipAngle_degrees) {
     delete bp;
   }
   bp = new BargerPropagator();
+}
+
+void OscillationHelper::Setup_baseline(double OscParams[6],
+                                       double baseline_km) {
+
+  const static double REarth_km = 6371.393;
+  double DipAngle = asin(baseline_km / (2.0 * REarth_km)) / deg2rad;
+  Setup_dipangle(OscParams, DipAngle);
 }
 
 void OscillationHelper::SetOscillationChannel(int PDGFrom, int PDGTo) {

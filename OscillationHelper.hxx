@@ -27,7 +27,8 @@ struct OscillationHelper {
 
   NuTypes GetNuType(int pdg);
 
-  void Setup(double OscParams[6], double DipAngle_degrees = 5.8);
+  void Setup_dipangle(double OscParams[6], double DipAngle_degrees = 5.8);
+  void Setup_baseline(double OscParams[6], double baseline_km = 295);
 
   OscillationHelper() : IsSetUp(false), bp(NULL){};
   OscillationHelper(OscillationHelper const &other);
