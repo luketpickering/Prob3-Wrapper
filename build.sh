@@ -20,3 +20,8 @@ if [ ! -e Prob3++/libThreeProb_2.10.a ]; then
 fi
 
 g++ OscillationHelper.cxx -I Prob3++ Prob3++/libThreeProb_2.10.a -fPIC -shared -o WrappedProb3++.${PROB3PPVERSION}.so $(root-config --cflags --libs)
+
+
+echo "#pragma once" > Prob3ppWrapper.hxx
+echo "#include \"$(pwd)/OscillationHelper.hxx\"" >> Prob3ppWrapper.hxx
+echo "#pragma cling load(\"$(pwd)/WrappedProb3++.${PROB3PPVERSION}.so\")" >> Prob3ppWrapper.hxx

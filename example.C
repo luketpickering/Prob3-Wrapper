@@ -1,5 +1,4 @@
-#include "OscillationHelper.hxx"
-R__LOAD_LIBRARY(WrappedProb3++ .20121225.so)
+#include "Prob3ppWrapper.hxx"
 
 #include "TFile.h"
 #include "TGraph.h"
