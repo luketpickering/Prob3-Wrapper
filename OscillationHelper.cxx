@@ -43,22 +43,24 @@ OscillationHelper::OscillationHelper(OscillationHelper const &other) {
 }
 
 void OscillationHelper::Setup_dipangle(double OscParams[6],
-                                       double DipAngle_degrees) {
+                                       double DipAngle_degrees, bool loud) {
   std::copy_n(OscParams, 6, this->OscParams);
   this->DipAngle_degrees = DipAngle_degrees;
 
-  std::cout << "[INFO]: Using oscillation parameters: " << std::endl
-            << "\tSin^2(Theta_12) = " << this->OscParams[0] << std::endl;
-  std::cout << "\tSin^2(Theta_13) = " << this->OscParams[1] << std::endl;
-  std::cout << "\tSin^2(Theta_23) = " << this->OscParams[2] << std::endl;
+  if(loud){
+    std::cout << "[INFO]: Using oscillation parameters: " << std::endl
+              << "\tSin^2(Theta_12) = " << this->OscParams[0] << std::endl;
+    std::cout << "\tSin^2(Theta_13) = " << this->OscParams[1] << std::endl;
+    std::cout << "\tSin^2(Theta_23) = " << this->OscParams[2] << std::endl;
 
-  std::cout << "\tDm^2_21 = " << this->OscParams[3] << " (GeV^2) " << std::endl;
-  std::cout << "\t|Dm^2_Atm| = " << this->OscParams[4] << " (GeV^2) "
-            << std::endl;
+    std::cout << "\tDm^2_21 = " << this->OscParams[3] << " (GeV^2) " << std::endl;
+    std::cout << "\t|Dm^2_Atm| = " << this->OscParams[4] << " (GeV^2) "
+              << std::endl;
 
-  std::cout << "\tdcp = " << this->OscParams[5] << std::endl;
-  std::cout << "\tBeam dip angle = " << DipAngle_degrees << " degrees"
-            << std::endl;
+    std::cout << "\tdcp = " << this->OscParams[5] << std::endl;
+    std::cout << "\tBeam dip angle = " << DipAngle_degrees << " degrees"
+              << std::endl;
+  }
 
   LengthParam = cos((90.0 + DipAngle_degrees) * deg2rad);
   IsSetUp = true;
@@ -70,11 +72,11 @@ void OscillationHelper::Setup_dipangle(double OscParams[6],
 }
 
 void OscillationHelper::Setup_baseline(double OscParams[6],
-                                       double baseline_km) {
+                                       double baseline_km, bool loud) {
 
   const static double REarth_km = 6371.393;
   double DipAngle = asin(baseline_km / (2.0 * REarth_km)) / deg2rad;
-  Setup_dipangle(OscParams, DipAngle);
+  Setup_dipangle(OscParams, DipAngle, loud);
 }
 
 void OscillationHelper::SetOscillationChannel(int PDGFrom, int PDGTo) {
