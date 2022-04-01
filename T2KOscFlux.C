@@ -91,6 +91,8 @@ int main(int argc, char const *argv[]) {
 
   SK_numu_FHC_unosc->GetXaxis()->SetRangeUser(0, 2);
   SK_numu_FHC_unosc->GetYaxis()->SetTitleOffset(1.5);
+  SK_numu_FHC_unosc->GetYaxis()->SetNdivisions(505);
+  SK_numu_FHC_unosc->GetXaxis()->SetNdivisions(505);
   SK_numu_FHC_unosc->SetTitle("");
   SK_numu_FHC_unosc->Draw("CHIST");
   SK_numu_FHC_disp->Draw("CHIST SAME");
