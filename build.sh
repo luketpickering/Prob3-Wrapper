@@ -10,6 +10,7 @@ if [ ! -e Prob3plusplus ]; then
 fi
 
 if [ ! -e Prob3plusplus/libThreeProb*.a ]; then
+
   cd Prob3plusplus
   CXXFLAGS=-fPIC CFLAGS=-fPIC make
   cd ../
@@ -26,5 +27,3 @@ echo "#pragma once" > Prob3ppWrapper.hxx
 echo "#include \"$(pwd)/OscillationHelper.hxx\"" >> Prob3ppWrapper.hxx
 echo "#pragma cling load(\"$(pwd)/WrappedProb3plusplus.so\")" >> Prob3ppWrapper.hxx
 
-echo "cat Prob3ppWrapper.hxx"
-cat Prob3ppWrapper.hxx

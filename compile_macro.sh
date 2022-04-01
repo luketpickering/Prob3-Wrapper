@@ -9,4 +9,4 @@ fi
 
 OUTPUTNAME=${SCRIPT_NAME/C/exe}
 
-g++ ${SCRIPT_NAME} -o ${OUTPUTNAME} -Wl,-rpath,$(pwd) WrappedProb3++.*.so $(root-config --cflags --libs)
+g++ ${SCRIPT_NAME} -o ${OUTPUTNAME} -Wl,-rpath,$(pwd) WrappedProb*.so $(root-config --cflags --libs)
